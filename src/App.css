@@ -24,6 +24,17 @@
   color: white;
 }
 
+.col-md-3{
+  height: 450px;
+  /* margin-bottom: 2%; */
+}
+.nav-NavLink{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin: 20px;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +46,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.modal{
+  color:black;
+  text-align: start;
 }

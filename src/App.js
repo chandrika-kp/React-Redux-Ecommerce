@@ -8,6 +8,7 @@ import Contact from './component/Contact';
 import EachProduct from './component/EachProduct';
 import CartBtn from './component/buttons/CartBtn';
 import About from './component/About'
+import Checkout from './component/Checkout';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route exact path="/products/:id" Component={EachProduct}/>
           <Route exact path="/contact" Component={Contact}/>
           <Route exact path="/cart" Component={CartBtn} />
+          <Route exact path="/checkout" Component={Checkout} />
         </Routes>
       </BrowserRouter>
     </>
