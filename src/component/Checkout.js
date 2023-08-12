@@ -9,24 +9,24 @@ const Checkout = () => {
         total += eachOne.price;
         return (
             <>
-            <div className="container">
-                <div className="row">
                 <ul className="list-group">
-                <li className="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                        <h6 className="my-0">{eachOne.title}</h6>
-                        <small className="text-body-secondary">Brief description</small>
-                    </div>
-                    <span className="text-body-secondary">${eachOne.price}</span>
-                </li>
-            </ul>
-                </div>
-            </div>
+                    <li className="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                            <h6 className="my-0">{(eachOne.title).substring(0, 20)}</h6>
+                            <small className="text-body-secondary">{eachOne.category}</small>
+                        </div>
+                        <span className="text-body-secondary"> ₹ {eachOne.price}</span>
+                    </li>
+                </ul>
             </>
-            
+
 
         )
 
+    }
+
+    const thankYou = () => {
+        return alert("Thank You for shopping with us")
     }
 
     return (
@@ -35,33 +35,29 @@ const Checkout = () => {
                 <div className="row g-5">
                     <div className="col-md-5 col-lg-4 order-md-last">
                         <h4 className="d-flex justify-content-between align-items-center mb-3">
-                            <span className="text-primary">Your cart</span>
-                            <span className="badge bg-primary rounded-pill">{state.length}</span>
+                            <span className="text-dark">Your cart</span>
+                            <span className="badge bg-success rounded-pill">{state.length}</span>
                         </h4>
                         <ul className="list-group mb-3">
-                            <li className="list-group-item d-flex justify-content-between lh-sm">
-                                {state.map(itemInList)}
-
+                            <li>{state.map(itemInList)}</li>
+                            <li className="list-group-item d-flex justify-content-between">
+                                <span>Total</span>
+                                <strong> ₹ {total}</strong>
                             </li>
-
-
                             <li className="list-group-item d-flex justify-content-between bg-body-tertiary">
                                 <div className="text-success">
                                     <h6 className="my-0">Promo code</h6>
-                                    <small>EXAMPLECODE</small>
+                                    <small>DISCOUNTCODE</small>
                                 </div>
-                                <span className="text-success">−$5</span>
+                                <span className="text-success">−10%</span>
                             </li>
-                            {/* <li className="list-group-item d-flex justify-content-between">
-                                <span>Total (USD)</span>
-                                <strong>${total - 5}</strong>
-                            </li> */}
+
                         </ul>
 
                         <form className="card p-2">
                             <div className="input-group">
-                                <input type="text" className="form-control" placeholder="Total (USD)" />
-                                <button type="submit" className="btn btn-secondary">$ {total - 5}</button>
+                                <input type="text" className="form-control" placeholder="Total ( rupees)" />
+                                <button type="submit" className="btn btn-secondary"> ₹ {(total - (total * 0.01)).toFixed(3)}</button>
                             </div>
                         </form>
                     </div>
@@ -139,7 +135,7 @@ const Checkout = () => {
                                     </div>
                                 </div>
 
-                                <div className="col-md-3">
+                                <div className="col-md-2">
                                     <label for="zip" className="form-label">Zip</label>
                                     <input type="text" className="form-control" id="zip" placeholder="" required="" />
                                     <div className="invalid-feedback">
@@ -196,27 +192,30 @@ const Checkout = () => {
                                         Credit card number is required
                                     </div>
                                 </div>
-
-                                <div className="col-md-3">
-                                    <label for="cc-expiration" className="form-label">Expiration</label>
-                                    <input type="text" className="form-control" id="cc-expiration" placeholder="" required="" />
-                                    <div className="invalid-feedback">
-                                        Expiration date required
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <label for="cc-expiration" className="form-label">Expiration</label>
+                                        <input type="text" className="form-control" id="cc-expiration" placeholder="" required="" />
+                                        <div className="invalid-feedback">
+                                            Expiration date required
+                                        </div>
                                     </div>
+
+                                    <div className="col-md-6">
+                                        <label for="cc-cvv" className="form-label">CVV</label>
+                                        <input type="text" className="form-control" id="cc-cvv" placeholder="" required="" />
+                                        <div className="invalid-feedback">
+                                            Security code required
+                                        </div>
+                                    </div>
+
                                 </div>
 
-                                <div className="col-md-3">
-                                    <label for="cc-cvv" className="form-label">CVV</label>
-                                    <input type="text" className="form-control" id="cc-cvv" placeholder="" required="" />
-                                    <div className="invalid-feedback">
-                                        Security code required
-                                    </div>
-                                </div>
                             </div>
 
                             <hr className="my-4" />
 
-                            <button className="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+                            <button className="w-100 btn btn-dark btn-lg" type="submit" onClick={()=> thankYou()}>Continue to checkout</button>
                         </form>
 
                     </div>

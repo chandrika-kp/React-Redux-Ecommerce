@@ -13,6 +13,11 @@ export default function Home() {
                     <p className="card-text lead">CHECK OUT ALL THE TRENDS</p>
                 </div>
             </div>
+            <div className="row">
+            <marquee className="fs-4 py-3">!!------Deal of the day || Flat <span className='fs-3' style={{color:"red"}}> 10% </span> discount on all Products-------------------!!</marquee>
+            <marquee direction="right" className="fs-4">!!------Deal of the day || Flat <span className='fs-3' style={{color:"red"}}> 10% </span> discount on all Products-------------------!!</marquee>
+
+            </div>
             <Products />
         </>
     )
