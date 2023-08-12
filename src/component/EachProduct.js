@@ -71,7 +71,7 @@ const EachProduct = () => {
                         Rating {product.rating && product.rating.rate}
                         <i className='fa fa-star'></i>
                     </p>
-                    <h3 className='display-6 fw-bold my-4'>${product.price}</h3>
+                    <h3 className='display-6 fw-bold my-4'>₹ {product.price}</h3>
                     <p>{product.description}</p>
                     <button className='btn btn-outline-dark p-2 m-2' onClick={()=>addProduct(product)}>{cartBtn}</button>
                     <NavLink to="/cart" className="btn btn-outline-dark p-2" >Go to Cart</NavLink>

@@ -28,7 +28,7 @@ const CartBtn = () => {
               <div className="col-md-4">
                 <h3 className='fs-4'>{cartItem.title}</h3>
               </div> <div className="col-md-2">
-                <p className="lead fw-bold">${cartItem.price}</p>
+                <p className="lead fw-bold"> ₹ {cartItem.price}</p>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ const CartBtn = () => {
     return (
       <div className="container">
         <div className="row">
-          <NavLink to="/checkout" className="btn btn-outline-dark mx-3 mb-5 w-25">Proceed To checkOut</NavLink>
+          <NavLink to="/checkout/" className="btn btn-outline-dark mx-3 mb-5 w-25">Proceed To checkOut</NavLink>
           <NavLink to="/products" className="btn btn-outline-dark mb-5 w-25">Continue shopping</NavLink>
         </div>
 
